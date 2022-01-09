@@ -1,6 +1,6 @@
 <?php
 //file hiển thị thông báo lỗi
-require_once 'views/commons/error.php';
+require_once 'views/error/error.php';
 ?>
 <a href="index.php?controller=employee&action=add">
     Thêm nhân viên mới
