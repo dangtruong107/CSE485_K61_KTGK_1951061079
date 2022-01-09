@@ -1,19 +1,14 @@
 <?php
-require_once 'models/Employees.php'; // lấy dữ liệu từ model và trả về viewbook, đứng giữa trung gian!
-// -- cung cấp các hàm tương ứng hành động mình muốn thực hiện 
+require_once 'models/Employees.php';
+
 
 class EmployeesController { // ----
 
     // la nhung action
     public function index() {   // ok
         echo "<h1>Hiển thị danh sách các nhân viên!</h1>";
-        //gọi view để hiển thị dữ liệu
-        //gọi view thực chất là nhúng file view vào
-        //gọi file luôn phải nhớ là đứng tại
-//        vị trí file index gốc của ứng dụng
         $employee = new NHANVIEN(); // tu model
         $employees = $employee->index(); // truyen sang view index trang chu
-//        print_r($books);
         require_once 'views/employees/index.php';
     }
 
@@ -108,18 +103,16 @@ class EmployeesController { // ----
         require_once 'views/employees/editEmployee.php';
     }
 
-    public function delete() {
-        //url trên trình dueyjet sẽ có dạng
-//        ?controller=book&action=delete&id=1
-        //bắt id từ trình duyêtj
+    public function delete() 
+        //bắt id từ trình duyêt
         $manv = $_GET['manv'];
         if (!is_numeric($manv)) {
             header("Location: index.php?controller=employee&action=index");
             exit();
         }
 
-        $book = new NHANVIEN();
-        $isDelete = $book->delete($manv);
+        $id = new NHANVIEN();
+        $isDelete = $id->delete($manv);
 
         if ($isDelete) {
             //chuyển hướng về trang liệt kê danh sách
