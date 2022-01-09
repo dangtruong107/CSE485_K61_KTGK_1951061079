@@ -2,7 +2,7 @@
 //file hiển thị thông báo lỗi
 require_once 'views/commons/error.php';
 ?>
-<a href="index.php?controller=teacheremployee&action=add">
+<a href="index.php?controller=employee&action=add">
     Thêm nhân viên mới
 </a>
 <br>
@@ -16,7 +16,7 @@ require_once 'views/commons/error.php';
         <th>Lương</th>
         <th>Ngày vào làm</th>
     </tr>
-    <?php if (!empty($employees)): ?>          <!-- bien books nay truyen tu BookController.php sang -->
+    <?php if (!empty($employees)): ?>  
         <?php foreach ($employees AS $employee) : ?>
             <tr>
                 <td><?php echo $employee['manv'] ?></td>
